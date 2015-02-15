@@ -1,3 +1,4 @@
+
 //Timer Class
 //Responsible for local timing and syncing with server
 
@@ -8,8 +9,18 @@ function Timer(){
     this.defaultTime = 1800;
     this.remaining = this.defaultTime;
     this.timeArray = {};
+    this.stopped = false;
 
     this.apiPath = 'http://localhost/game-api';
+
+    this.build = function() {
+        self.stopped = false;
+        self.tick();
+    };
+
+    this.halt = function() {
+        self.stopped = true;
+    };
 
     this.sync = function() {
         jQuery.ajax({
@@ -30,19 +41,21 @@ function Timer(){
 
     this.tick = function() {
         console.log('tick');
-        if (self.running === false){
-            self.sync();
-        }
+        if (self.stopped !== true) {
+            if (self.running === false){
+                self.sync();
+            }
 
-        if (self.running === true && self.remaining > 0) {
-            console.log(self.remaining);
-            self.sync();
+            if (self.running === true && self.remaining > 0) {
+                console.log(self.remaining);
+                self.sync();
 
-            self.remaining -= 1;
-            self.tickEvent();
-            window.setTimeout(self.tick, 1000);
-        } else {
-            window.setTimeout(self.tick, 1000);
+                self.remaining -= 1;
+                self.tickEvent();
+                window.setTimeout(self.tick, 1000);
+            } else {
+                window.setTimeout(self.tick, 1000);
+            }
         }
     };
 

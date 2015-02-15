@@ -13,7 +13,7 @@ module.exports = function(grunt) {
 
 		concat: {
 			dep: {
-				src: ['bower_components/jquery/dist/jquery.min.js'], 
+				src: ['bower_components/jquery/dist/jquery.min.js', 'bower_components/screenfull/dist/screenfull.js'], 
 				dest: 'dev/js/dependencies.js'
 			},
 			dev: {
@@ -56,7 +56,7 @@ module.exports = function(grunt) {
 			},
 			build: {
 				files: {
-					'build/js/main.min.js': ['bower_components/jquery/dist/jquery.min.js', 'src/js/*.js']
+					'build/js/main.min.js': ['bower_components/jquery/dist/jquery.min.js', 'bower_components/screenfull/dist/screenfull.js', 'src/js/*.js']
 				}
 			}
 		},
@@ -101,7 +101,7 @@ module.exports = function(grunt) {
 			},
 			less: {
 				files: ['src/less/*.less'],
-				tasks: ['lesslint', 'less:dev'],
+				tasks: ['less:dev'],
 				options: {
 			      livereload: true,
 			    }
@@ -125,6 +125,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-htmlrefs');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 
-	grunt.registerTask('dev', ['jshint:dev', 'lesslint', 'concat:dep', 'concat:dev', 'less:dev', 'copy']);
+	grunt.registerTask('dev', ['jshint:dev', 'concat:dep', 'concat:dev', 'less:dev', 'copy']);
 	grunt.registerTask('build', ['jshint:dev', 'uglify:build', 'less:build', 'htmlrefs:build']);
 };

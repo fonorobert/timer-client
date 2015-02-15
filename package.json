@@ -1,6 +1,6 @@
 {
-  "name": "js-less-boilerplate",
-  "title": "js-less-boilerplate",
+  "name": "game-timer-client",
+  "title": "game-timer-client",
   "version": "0.0.1",
   "devDependencies": {
     "grunt": "0.4.5",

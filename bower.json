@@ -1,7 +1,7 @@
 {
-  "name": "js-less-boilerplate",
+  "name": "game-timer-client",
   "version": "0.0.1",
-  "homepage": "https://github.com/fonorobert/js-less-boilerplate",
+  "homepage": "https://github.com/fonorobert/timer-client",
   "authors": [
     "fonorobert <fonorobert@gmail.com>"
   ],

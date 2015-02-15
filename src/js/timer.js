@@ -11,7 +11,7 @@ function Timer(){
     this.timeArray = {};
     this.stopped = false;
 
-    this.apiPath = 'http://localhost/game-api';
+    this.apiPath = 'http://' + window.location.host + '/game-api';
 
     this.build = function() {
         self.stopped = false;

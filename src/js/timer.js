@@ -36,9 +36,8 @@ function Timer(){
 
         if (self.running === true && self.remaining > 0) {
             console.log(self.remaining);
-            if (self.remaining % 2 === 0){
-                self.sync();
-            }
+            self.sync();
+
             self.remaining -= 1;
             self.tickEvent();
             window.setTimeout(self.tick, 1000);

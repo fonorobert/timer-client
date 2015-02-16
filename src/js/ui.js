@@ -3,6 +3,9 @@ var d = new Display();
 t.build();
 d.build();
 
-if (screenfull.enabled) {
-    screenfull.request();
-}
+$('#fullscreen').click(function(){
+    if (screenfull.enabled) {
+        screenfull.request();
+    }
+    $('#fullscreen').hide();
+});

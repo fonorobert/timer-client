@@ -6,7 +6,7 @@ function Timer(){
     self = this;
 
     this.running = false;
-    this.defaultTime = 1800;
+    this.defaultTime = 3600;
     this.remaining = this.defaultTime;
     this.timeArray = {};
     this.stopped = false;

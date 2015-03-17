@@ -44,6 +44,7 @@ function Timer(){
         if (self.stopped !== true) {
             if (self.running === false){
                 self.sync();
+                window.setTimeout(self.tick, 1000);
             }
 
             if (self.running === true && self.remaining > 0) {
@@ -54,6 +55,7 @@ function Timer(){
                 self.tickEvent();
                 window.setTimeout(self.tick, 1000);
             } else {
+                self.sync();
                 window.setTimeout(self.tick, 1000);
             }
         }

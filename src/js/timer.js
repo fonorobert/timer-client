@@ -43,7 +43,7 @@ function Timer(){
         console.log('tick');
         if (self.stopped !== true) {
             if (self.running === false){
-                self.sync();
+                //self.sync();
                 window.setTimeout(self.tick, 1000);
             }
 

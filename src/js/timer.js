@@ -43,8 +43,9 @@ function Timer(){
         console.log('tick');
         if (self.stopped !== true) {
             if (self.running === false){
-                //self.sync();
+                self.sync();
                 window.setTimeout(self.tick, 1000);
+                return;
             }
 
             if (self.running === true && self.remaining > 0) {
@@ -54,9 +55,11 @@ function Timer(){
                 self.remaining -= 1;
                 self.tickEvent();
                 window.setTimeout(self.tick, 1000);
+                return;
             } else {
                 self.sync();
                 window.setTimeout(self.tick, 1000);
+                return;
             }
         }
     };
